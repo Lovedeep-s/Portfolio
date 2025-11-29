@@ -1,0 +1,60 @@
+Lovedeep Singh
++91 70875 71659 |s.lovedeepparmarpta@gmail.com
+linkedin.com/in/lovedeepsingh102 |github.com/Lovedeep-s
+Career Summary
+Software Engineer with hands-on experience in building scalable web platforms, backend systems, and user-focused
+applications using React, Go, TypeScript, and Python. Skilled in accessibility, performance optimization, and
+automation, with a proven track record of delivering impactful solutions during internships and full-time roles in
+fast-paced environments.
+Technical Skills
+Languages : Python, C/C++, JavaScript, TypeScript, HTML/CSS, React, Golang, MySQL, Oracle SQL, Matlab, R
+Developer Tools : Git, VS Code, Visual Studio, Matlab, Docker, Postman,Jenkins ,Tomcat, Nginx
+Professional Experience
+Vimo India Private Limited
+•Associate Software Engineer July 2025 – Present
+∗Led accessibility improvements across the web platform, conducting comprehensive audits using Axe, WAVE,
+and screen readers to ensure WCAG 2.2 AA compliance.
+∗Migrated core frontend modules from JavaScript to TypeScript, enhancing code maintainability, reducing bugs,
+and improving team collaboration.
+∗Designed and developed a content editing microservice that decouples static text from the monolithic frontend,
+enabling non-developers to update UI content via a user-friendly interface.
+∗Key Achievements:
+·Reduced frontend page load times by 30% through code optimization and TypeScript migration.
+·Enabled non-developers to manage UI content independently, reducing deployment dependency on the
+engineering team by 40%.
+·Improved accessibility score across core modules from 75% to 95% WCAG 2.2 AA compliance.
+•Software Development Engineer (SDE) Intern January 2025 – June 2025
+∗Built and scaled a content-serving backend API integrated with Bitbucket to support dynamic updates,
+improving deployment speed and flexibility.
+∗Collaborated with DevOps to integrate the system into CI/CD pipelines using Jenkins, ensuring automated
+testing and streamlined deployments.
+∗Worked closely with designers and stakeholders to refine user experience and ensure accessibility enhancements
+translated to real-world usability gains.
+Arvat AI |Software Development Engineer (SDE) Intern July 2024 – December 2024
+•Contributed to building a customer success platform using React and Go, focusing on performance optimization
+and feature scalability.
+•Developed a customizable dashboard with drag-and-drop functionality using the react-grid-layout library, and
+designed APIs for layout persistence and user configurations.
+•Utilized Go interfaces and modular architecture to promote clean separation of concerns, reducing tight coupling
+across services.
+•Implemented a background task queuing system using goroutines to automate scheduled processes and enhance
+backend throughput.
+•Integrated Slack notifications via API tokens to deliver real-time alerts, supporting proactive incident tracking and
+resolution.
+•Key Achievements :
+∗Designed and implemented a custom queueing system from scratch, eliminating reliance on AWS SQS, and
+incorporating features such as delayed message processing.Projects
+GreenLight |Django, HTML/CSS, Javascript, YOLOv3, OpenCV Oct 2022 – Nov 2022
+•Developed portal which informs administrators which rooms are empty and lights are on using footage from a
+CCTV camera
+•Source Code: https://github.com/Lovedeep-s/CNN-based-human-detection-to-save-electricity
+Tagit |Django, HTML/CSS, Javascript Jan 2023 – May 2023
+•Developed a cutting-edge portal that enables the generation of unique QR codes for efficient luggage tracking and
+management, revolutionizing the way luggage is monitored. Successfully implemented a seamless system allowing
+users to easily attach the QR codes to their belongings for effortless identification and tracking.
+•Frontend Source Code: https://github.com/Lovedeep-s/TagIT.git
+Education
+Thapar Institute of Engineering and Technology Patiala, India
+Bachelor of Engineering in Computer Science and Business Systems - 8.69 (CGPA) October 2021 – June 2025
+References
+Referees can be provided if required.
