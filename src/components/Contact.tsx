@@ -148,7 +148,7 @@ export default function Contact() {
               as="form"
               onSubmit={handleSubmit}
               p={8}
-              bg="rgba(255, 255, 255, 0.05)"
+              bg="linear-gradient(to bottom, #0f172a, #090b0f)"
               borderRadius="xl"
               border="1px solid rgba(255, 255, 255, 0.1)"
             >
@@ -165,6 +165,8 @@ export default function Contact() {
                       border="1px solid rgba(255, 255, 255, 0.1)"
                       _hover={{ borderColor: 'blue.400' }}
                       _focus={{ borderColor: 'blue.400', boxShadow: '0 0 0 1px #2196f3' }}
+                      p={4}
+                      color="white"
                     />
                   </Field.Root>
 
@@ -180,6 +182,8 @@ export default function Contact() {
                       border="1px solid rgba(255, 255, 255, 0.1)"
                       _hover={{ borderColor: 'blue.400' }}
                       _focus={{ borderColor: 'blue.400', boxShadow: '0 0 0 1px #2196f3' }}
+                      p={4}
+                      color="white"
                     />
                   </Field.Root>
                 </SimpleGrid>
@@ -195,6 +199,8 @@ export default function Contact() {
                     border="1px solid rgba(255, 255, 255, 0.1)"
                     _hover={{ borderColor: 'blue.400' }}
                     _focus={{ borderColor: 'blue.400', boxShadow: '0 0 0 1px #2196f3' }}
+                    p={4}
+                    color="white"
                   />
                 </Field.Root>
 
@@ -210,6 +216,8 @@ export default function Contact() {
                     border="1px solid rgba(255, 255, 255, 0.1)"
                     _hover={{ borderColor: 'blue.400' }}
                     _focus={{ borderColor: 'blue.400', boxShadow: '0 0 0 1px #2196f3' }}
+                    p={4}
+                    color="white"
                   />
                 </Field.Root>
 
@@ -218,6 +226,7 @@ export default function Contact() {
                   colorScheme="blue"
                   size="lg"
                   _hover={{ transform: 'translateY(-2px)', boxShadow: '0 10px 30px rgba(33, 150, 243, 0.4)' }}
+                  color="white"
                 >
                   <Send size={20} style={{ marginRight: '8px' }} />
                   Send Message

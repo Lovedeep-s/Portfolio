@@ -1,5 +1,5 @@
 import { Box, Text, HStack, Link, Stack } from '@chakra-ui/react'
-import { Github, Linkedin, Mail, Heart } from 'lucide-react'
+import { Github, Linkedin, Mail } from 'lucide-react'
 
 export default function Footer() {
   return (
@@ -10,29 +10,26 @@ export default function Footer() {
             <Link
               href="https://github.com/lovedeepsingh"
               target="_blank"
-              _hover={{ color: 'cyan.400', transform: 'translateY(-2px)' }}
+              _hover={{ color: 'cyan.400', transform: 'translateY(-2px)', opacity: 1 }}
               transition="all 0.2s"
               opacity={0.7}
-              _hoverOpacity={1}
             >
               <Github size={28} />
             </Link>
             <Link
               href="https://linkedin.com/in/lovedeepsingh"
               target="_blank"
-              _hover={{ color: 'cyan.400', transform: 'translateY(-2px)' }}
+              _hover={{ color: 'cyan.400', transform: 'translateY(-2px)', opacity: 1 }}
               transition="all 0.2s"
               opacity={0.7}
-              _hoverOpacity={1}
             >
               <Linkedin size={28} />
             </Link>
             <Link
               href="mailto:lovedeep@example.com"
-              _hover={{ color: 'cyan.400', transform: 'translateY(-2px)' }}
+              _hover={{ color: 'cyan.400', transform: 'translateY(-2px)', opacity: 1 }}
               transition="all 0.2s"
               opacity={0.7}
-              _hoverOpacity={1}
             >
               <Mail size={28} />
             </Link>

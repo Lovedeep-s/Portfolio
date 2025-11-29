@@ -52,7 +52,7 @@ export default function About() {
           </MotionBox>
 
           <SimpleGrid columns={{ base: 1, md: 2, lg: 4 }} gap={6}>
-            {highlights.map((item, index) => {
+            {highlights.map((item) => {
               const Icon = item.icon
               return (
                 <MotionBox
