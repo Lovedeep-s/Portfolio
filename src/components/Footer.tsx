@@ -22,6 +22,7 @@ export default function Footer() {
               }}
               transition="all 0.2s"
               opacity={0.7}
+              color="white"
             >
               <Github size={28} />
             </Link>
@@ -35,6 +36,7 @@ export default function Footer() {
               }}
               transition="all 0.2s"
               opacity={0.7}
+              color="white"
             >
               <Linkedin size={28} />
             </Link>
@@ -47,6 +49,7 @@ export default function Footer() {
               }}
               transition="all 0.2s"
               opacity={0.7}
+              color="white"
             >
               <Mail size={28} />
             </Link>
