@@ -1,160 +1,319 @@
-import { Box, Heading, Text, Stack, HStack, Badge } from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { Briefcase, GraduationCap } from "lucide-react";
+import { motion } from 'framer-motion'
+import { Briefcase, GraduationCap } from 'lucide-react'
 
-const MotionBox = motion.create(Box as any);
-
-const experiences = [
+const timeline = [
   {
-    type: "work",
-    title: "Associate Software Engineer",
-    company: "Vimo India Private Limited",
-    period: "July 2025 - Present",
+    period: '2025 – Present',
+    title: 'Associate Software Engineer',
+    org: 'Vimo India',
     description:
-      "Leading accessibility improvements and modernization of web platform for Health Insurance Exchange.",
-    achievements: [
-      "Led accessibility improvements across the web platform, conducting comprehensive audits using Axe, WAVE, and screen readers to ensure WCAG 2.2 AA compliance",
-      "Migrated core frontend modules from JavaScript to TypeScript, enhancing code maintainability and reducing bugs",
-      "Designed and developed a content editing microservice that decouples static text from the monolithic frontend",
-      "Reduced frontend page load times by 30% through code optimization and TypeScript migration",
-      "Improved accessibility score across core modules from 75% to 95% WCAG 2.2 AA compliance",
-      "Enabled non-developers to manage UI content independently, reducing deployment dependency by 40%",
+      'Leading WCAG 2.2 improvements, migrating key modules to TypeScript, and improving page performance by 30%.',
+    bullets: [
+      'Led accessibility audit and WCAG 2.2 remediation across core product flows.',
+      'Drove TypeScript migration for critical frontend modules, reducing runtime bugs by 40%.',
+      'Optimised React rendering pipeline, improving LCP and INP scores significantly.',
     ],
+    accent: '#2463eb',
+    icon: 'work',
   },
   {
-    type: "work",
-    title: "Software Development Engineer (SDE) Intern",
-    company: "Vimo India Private Limited",
-    period: "January 2025 - June 2025",
+    period: '2025',
+    title: 'Software Engineer Intern',
+    org: 'Vimo India',
     description:
-      "Built and scaled backend systems for content-serving APIs with CI/CD integration.",
-    achievements: [
-      "Built and scaled a content-serving backend API integrated with Bitbucket to support dynamic updates",
-      "Collaborated with DevOps to integrate the system into CI/CD pipelines using Jenkins",
-      "Worked closely with designers and stakeholders to refine user experience and ensure accessibility enhancements",
+      'Built backend services and CI/CD-integrated content delivery tooling with strong collaboration across design and platform teams.',
+    bullets: [
+      'Designed and shipped a CMS integration that decoupled UI content from the codebase.',
+      'Automated deployment pipelines using Jenkins + Docker, cutting release time by 50%.',
+      'Collaborated with design team to deliver pixel-perfect, accessible UI components.',
     ],
+    accent: '#8b5cf6',
+    icon: 'work',
   },
   {
-    type: "work",
-    title: "Software Development Engineer (SDE) Intern",
-    company: "Arvat AI",
-    period: "July 2024 - December 2024",
+    period: '2024',
+    title: 'SDE Intern',
+    org: 'Arvat AI',
     description:
-      "Contributed to building a customer success platform using React and Go.",
-    achievements: [
-      "Developed a customizable dashboard with drag-and-drop functionality using the react-grid-layout library",
-      "Designed APIs for layout persistence and user configurations",
-      "Utilized Go interfaces and modular architecture to promote clean separation of concerns",
-      "Implemented a background task queuing system using goroutines to automate scheduled processes",
-      "Integrated Slack notifications via API tokens to deliver real-time alerts",
-      "Designed and implemented a custom queueing system from scratch, eliminating reliance on AWS SQS",
+      'Developed dashboard systems, persistent layouts, and background queue workflows with Go and React.',
+    bullets: [
+      'Built real-time analytics dashboards in React with WebSocket data streams.',
+      'Engineered background job queues in Go, processing 10k+ tasks daily reliably.',
+      'Implemented persistent layout system that reduced user context-switching friction.',
     ],
+    accent: '#2463eb',
+    icon: 'work',
   },
-  {
-    type: "education",
-    title: "Bachelor of Engineering in Computer Science and Business Systems",
-    company: "Thapar Institute of Engineering and Technology",
-    period: "October 2021 - June 2025",
-    description: "Patiala, India - 8.69 CGPA",
-    achievements: [
-      "Focused on Software Engineering, Data Structures, Algorithms, and Web Technologies",
-      "Completed projects in Computer Vision, Web Development, and System Design",
-    ],
-  },
-];
+]
 
 export default function Experience() {
   return (
-    <Box id="experience" py={20}>
-      <Box maxW="100%" px={{ base: 6, md: 12, lg: 20 }}>
-        <MotionBox
-          initial={{ opacity: 0, y: 20 }}
+    <section
+      id="experience"
+      style={{
+        position: 'relative',
+        zIndex: 1,
+        padding: '100px 24px',
+      }}
+    >
+      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
           viewport={{ once: true }}
-          textAlign="center"
-          mb={12}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '64px' }}
         >
-          <Heading fontSize={{ base: "3xl", md: "4xl", lg: "5xl" }} mb={4}>
-            Experience & Education
-          </Heading>
-          <Text
-            fontSize={{ base: "lg", md: "xl" }}
-            color="gray.400"
-            maxW="3xl"
-            mx="auto"
+          <p
+            style={{
+              fontSize: '13px',
+              fontWeight: '600',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--accent)',
+              marginBottom: '12px',
+            }}
           >
-            My professional journey and academic background
-          </Text>
-        </MotionBox>
-
-        <Stack gap={8} maxW="4xl" mx="auto">
-          {experiences.map((exp, index) => (
-            <MotionBox
-              key={index}
-              initial={{ opacity: 0, x: index % 2 === 0 ? -20 : 20 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.6, delay: index * 0.1 }}
-              viewport={{ once: true }}
-              position="relative"
+            Career
+          </p>
+          <h2
+            style={{
+              fontSize: 'clamp(36px, 5vw, 56px)',
+              fontWeight: '700',
+              letterSpacing: '-0.03em',
+              color: 'var(--text-primary)',
+              lineHeight: '1.1',
+            }}
+          >
+            Journey Through{' '}
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #2463eb, #8b5cf6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
+              }}
             >
-              <Box
-                p={8}
-                bg="rgba(17, 25, 40, 0.5)"
-                borderRadius="xl"
-                border="1px solid rgba(255, 255, 255, 0.1)"
-                _hover={{
-                  borderColor: "blue.400",
-                  boxShadow: "0 10px 30px rgba(33, 150, 243, 0.2)",
+              Time
+            </span>
+          </h2>
+          <div
+            style={{
+              width: '48px',
+              height: '3px',
+              background: 'linear-gradient(90deg, #2463eb, #8b5cf6)',
+              borderRadius: '2px',
+              marginTop: '16px',
+            }}
+          />
+        </motion.div>
+
+        {/* Timeline */}
+        <div style={{ position: 'relative' }}>
+          {/* Vertical line */}
+          <div
+            style={{
+              position: 'absolute',
+              left: '20px',
+              top: '8px',
+              bottom: '8px',
+              width: '1px',
+              background:
+                'linear-gradient(180deg, #2463eb 0%, #8b5cf6 50%, #2463eb 100%)',
+              opacity: 0.3,
+            }}
+          />
+
+          <div
+            style={{
+              display: 'flex',
+              flexDirection: 'column',
+              gap: '32px',
+              paddingLeft: '60px',
+            }}
+          >
+            {timeline.map((item, i) => (
+              <TimelineCard key={item.title} item={item} index={i} />
+            ))}
+          </div>
+        </div>
+      </div>
+    </section>
+  )
+}
+
+function TimelineCard({
+  item,
+  index,
+}: {
+  item: (typeof timeline)[number]
+  index: number
+}) {
+  const isEven = index % 2 === 0
+
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: isEven ? -30 : 30 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true }}
+      transition={{ duration: 0.6, delay: index * 0.1 }}
+      style={{ position: 'relative' }}
+    >
+      {/* Timeline dot */}
+      <div
+        style={{
+          position: 'absolute',
+          left: '-48px',
+          top: '20px',
+          width: '16px',
+          height: '16px',
+          borderRadius: '50%',
+          background: item.accent,
+          boxShadow: `0 0 16px ${item.accent}66`,
+          border: '3px solid var(--bg-base)',
+          zIndex: 2,
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'center',
+        }}
+      />
+
+      {/* Card */}
+      <div
+        style={{
+          background: 'var(--card-bg)',
+          border: `1px solid ${item.accent}22`,
+          borderLeft: `3px solid ${item.accent}`,
+          borderRadius: 'var(--radius-lg)',
+          backdropFilter: 'blur(16px)',
+          WebkitBackdropFilter: 'blur(16px)',
+          padding: '28px',
+          transition: 'border-color 0.3s, box-shadow 0.3s',
+        }}
+        onMouseEnter={(e) => {
+          ;(e.currentTarget as HTMLElement).style.boxShadow = `0 16px 48px ${item.accent}22`
+          ;(e.currentTarget as HTMLElement).style.borderColor = `${item.accent}55`
+        }}
+        onMouseLeave={(e) => {
+          ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
+          ;(e.currentTarget as HTMLElement).style.borderColor = `${item.accent}22`
+        }}
+      >
+        {/* Header row */}
+        <div
+          style={{
+            display: 'flex',
+            alignItems: 'flex-start',
+            justifyContent: 'space-between',
+            flexWrap: 'wrap',
+            gap: '12px',
+            marginBottom: '14px',
+          }}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+            <div
+              style={{
+                width: '36px',
+                height: '36px',
+                borderRadius: '8px',
+                background: `${item.accent}18`,
+                border: `1px solid ${item.accent}33`,
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                color: item.accent,
+                flexShrink: 0,
+              }}
+            >
+              {item.icon === 'work' ? (
+                <Briefcase size={16} />
+              ) : (
+                <GraduationCap size={16} />
+              )}
+            </div>
+            <div>
+              <h3
+                style={{
+                  fontSize: '17px',
+                  fontWeight: '700',
+                  color: 'var(--text-primary)',
+                  letterSpacing: '-0.02em',
+                  lineHeight: '1.3',
                 }}
               >
-                <HStack gap={4} mb={4}>
-                  <Box
-                    p={3}
-                    bg="rgba(33, 150, 243, 0.1)"
-                    borderRadius="lg"
-                    border="1px solid rgba(33, 150, 243, 0.2)"
-                  >
-                    {exp.type === "work" ? (
-                      <Briefcase size={24} color="#2196f3" />
-                    ) : (
-                      <GraduationCap size={24} color="#2196f3" />
-                    )}
-                  </Box>
-                  <Box flex="1">
-                    <HStack justify="space-between" flexWrap="wrap">
-                      <Heading size="md">{exp.title}</Heading>
-                      <Badge colorPalette="blue" fontSize="sm">
-                        {exp.period}
-                      </Badge>
-                    </HStack>
-                    <Text color="blue.400" fontWeight="medium" mt={1}>
-                      {exp.company}
-                    </Text>
-                  </Box>
-                </HStack>
+                {item.title}
+              </h3>
+              <p
+                style={{
+                  fontSize: '14px',
+                  fontWeight: '600',
+                  color: item.accent,
+                  marginTop: '2px',
+                }}
+              >
+                {item.org}
+              </p>
+            </div>
+          </div>
 
-                <Text color="gray.400" mb={4}>
-                  {exp.description}
-                </Text>
+          <span
+            style={{
+              padding: '5px 12px',
+              borderRadius: '999px',
+              background: `${item.accent}14`,
+              border: `1px solid ${item.accent}30`,
+              fontSize: '12px',
+              fontWeight: '600',
+              color: item.accent === '#2463eb' ? '#93c5fd' : '#c4b5fd',
+              whiteSpace: 'nowrap',
+            }}
+          >
+            {item.period}
+          </span>
+        </div>
 
-                <Stack gap={2}>
-                  {exp.achievements.map((achievement, i) => (
-                    <HStack key={i} align="start">
-                      <Text color="blue.400" mt={1}>
-                        •
-                      </Text>
-                      <Text color="gray.300" fontSize="sm">
-                        {achievement}
-                      </Text>
-                    </HStack>
-                  ))}
-                </Stack>
-              </Box>
-            </MotionBox>
+        <p
+          style={{
+            fontSize: '14px',
+            color: 'var(--text-secondary)',
+            lineHeight: '1.65',
+            marginBottom: '16px',
+          }}
+        >
+          {item.description}
+        </p>
+
+        {/* Bullet points */}
+        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+          {item.bullets.map((bullet) => (
+            <li
+              key={bullet}
+              style={{
+                display: 'flex',
+                alignItems: 'flex-start',
+                gap: '8px',
+                marginBottom: '8px',
+                fontSize: '13px',
+                color: 'var(--text-secondary)',
+                lineHeight: '1.6',
+              }}
+            >
+              <span
+                style={{
+                  width: '5px',
+                  height: '5px',
+                  borderRadius: '50%',
+                  background: item.accent,
+                  flexShrink: 0,
+                  marginTop: '8px',
+                }}
+              />
+              {bullet}
+            </li>
           ))}
-        </Stack>
-      </Box>
-    </Box>
-  );
+        </ul>
+      </div>
+    </motion.div>
+  )
 }

@@ -1,129 +1,243 @@
-import { Box, Heading, Text, Button, Stack, HStack, Link } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import { Github, Linkedin, Mail } from 'lucide-react'
+import { motion, type Variants } from 'framer-motion'
+import { ArrowRight, MessageCircle } from 'lucide-react'
 
-const MotionBox = motion.create(Box)
-const MotionHeading = motion.create(Heading)
-const MotionText = motion.create(Text as any)
+const container: Variants = {
+  hidden: {},
+  show: {
+    transition: {
+      staggerChildren: 0.12,
+      delayChildren: 0.3,
+    },
+  },
+}
+
+const item: Variants = {
+  hidden: { opacity: 0, y: 30 },
+  show: { opacity: 1, y: 0 },
+}
+
+const itemTransition = { duration: 0.6, ease: 'easeOut' as const }
 
 export default function Hero() {
   return (
-    <Box
+    <section
       id="home"
-      minH="100vh"
-      display="flex"
-      alignItems="center"
-      justifyContent="center"
-      pt={16}
-      position="relative"
+      style={{
+        position: 'relative',
+        minHeight: '100vh',
+        display: 'flex',
+        alignItems: 'center',
+        justifyContent: 'center',
+        padding: '120px 24px 80px',
+        zIndex: 1,
+      }}
     >
-      <Box maxW="100%" px={{ base: 6, md: 12, lg: 20 }}>
-        <Stack gap={12} textAlign="center">
-          <MotionHeading
-            fontSize={{ base: '5xl', md: '7xl', lg: '8xl' }}
-            fontWeight="black"
-            lineHeight="0.9"
-            letterSpacing="-0.02em"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+      <motion.div
+        variants={container}
+        initial="hidden"
+        animate="show"
+        style={{
+          maxWidth: '860px',
+          width: '100%',
+          textAlign: 'center',
+          display: 'flex',
+          flexDirection: 'column',
+          alignItems: 'center',
+          gap: '28px',
+        }}
+      >
+        {/* Status pill */}
+        <motion.div variants={item} transition={itemTransition}>
+          <div
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '6px 16px 6px 10px',
+              borderRadius: '999px',
+              background: 'rgba(36, 99, 235, 0.1)',
+              border: '1px solid rgba(36, 99, 235, 0.3)',
+              fontSize: '12px',
+              fontWeight: '600',
+              letterSpacing: '0.1em',
+              color: '#a5b4fc',
+              textTransform: 'uppercase',
+            }}
           >
-            Building the Future
-            <br />
-            <Text as="span" bgGradient="to-r" gradientFrom="cyan.400" gradientTo="blue.500" bgClip="text">
-              One Line at a Time.
-            </Text>
-          </MotionHeading>
+            <span
+              style={{
+                width: '8px',
+                height: '8px',
+                borderRadius: '50%',
+                background: '#22c55e',
+                boxShadow: '0 0 0 0 rgba(34, 197, 94, 0.4)',
+                animation: 'pulse-dot 2s ease-in-out infinite',
+                flexShrink: 0,
+              }}
+            />
+            Available for New Projects
+          </div>
+        </motion.div>
 
-          <MotionText
-            fontSize={{ base: '2xl', md: '3xl' }}
-            fontWeight="medium"
-            color="gray.300"
-            maxW="4xl"
-            mx="auto"
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+        {/* Name */}
+        <motion.h1
+          variants={item}
+          transition={itemTransition}
+          style={{
+            fontSize: 'clamp(48px, 8vw, 96px)',
+            fontWeight: '700',
+            lineHeight: '1.0',
+            letterSpacing: '-0.03em',
+            color: 'var(--text-primary)',
+          }}
+        >
+          Lovedeep{' '}
+          <span
+            style={{
+              background: 'linear-gradient(135deg, #2463eb 0%, #8b5cf6 50%, #a78bfa 100%)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent',
+              backgroundClip: 'text',
+            }}
           >
-            Software Engineer building scalable web platforms with React, Go, TypeScript, and Python
-          </MotionText>
+            Singh
+          </span>
+        </motion.h1>
 
-          <MotionBox
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
+        {/* Tagline */}
+        <motion.p
+          variants={item}
+          transition={itemTransition}
+          style={{
+            fontSize: 'clamp(16px, 2.5vw, 20px)',
+            color: 'var(--text-secondary)',
+            lineHeight: '1.7',
+            maxWidth: '600px',
+          }}
+        >
+          Crafting immersive{' '}
+          <strong style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
+            3D web experiences
+          </strong>{' '}
+          and high-performance applications with a focus on modern aesthetics and
+          glassmorphism.
+        </motion.p>
+
+        {/* CTAs */}
+        <motion.div
+          variants={item}
+          transition={itemTransition}
+          style={{
+            display: 'flex',
+            gap: '16px',
+            flexWrap: 'wrap',
+            justifyContent: 'center',
+          }}
+        >
+          <a
+            href="#projects"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '14px 28px',
+              borderRadius: '999px',
+              background: 'linear-gradient(135deg, #2463eb, #3b74f5)',
+              color: '#fff',
+              fontSize: '15px',
+              fontWeight: '600',
+              textDecoration: 'none',
+              boxShadow: '0 8px 28px rgba(36, 99, 235, 0.4)',
+              transition: 'transform 0.2s, box-shadow 0.2s',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+              ;(e.currentTarget as HTMLElement).style.boxShadow =
+                '0 12px 36px rgba(36, 99, 235, 0.55)'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+              ;(e.currentTarget as HTMLElement).style.boxShadow =
+                '0 8px 28px rgba(36, 99, 235, 0.4)'
+            }}
           >
-            <HStack gap={6} justify="center" mb={12}>
-              <Link href="#contact">
-                <Button 
-                  size="xl" 
-                  colorScheme="blue"
-                  fontSize="lg"
-                  px={10}
-                  py={7}
-                  borderRadius="full"
-                  bgGradient="to-r"
-                  gradientFrom="cyan.400"
-                  gradientTo="blue.500"
-                  _hover={{
-                    transform: 'translateY(-2px)',
-                    boxShadow: '0 20px 60px rgba(34, 211, 238, 0.4)',
-                  }}
-                >
-                  Let's Talk
-                </Button>
-              </Link>
-              <Link href="/Lovedeep_s_Resume.pdf" download>
-                <Button 
-                  size="xl" 
-                  variant="outline"
-                  fontSize="lg"
-                  px={10}
-                  py={7}
-                  borderRadius="full"
-                  borderWidth="2px"
-                  borderColor="gray.600"
-                  color="white"
-                  _hover={{
-                    borderColor: 'cyan.400',
-                    transform: 'translateY(-2px)',
-                  }}
-                >
-                  View Resume
-                </Button>
-              </Link>
-            </HStack>
+            View Projects
+            <ArrowRight size={16} />
+          </a>
+          <a
+            href="#contact"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '8px',
+              padding: '14px 28px',
+              borderRadius: '999px',
+              background: 'rgba(13, 18, 36, 0.7)',
+              border: '1px solid rgba(36, 99, 235, 0.3)',
+              color: 'var(--text-primary)',
+              fontSize: '15px',
+              fontWeight: '600',
+              textDecoration: 'none',
+              backdropFilter: 'blur(12px)',
+              transition: 'border-color 0.2s, background 0.2s, transform 0.2s',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget as HTMLElement).style.borderColor =
+                'rgba(36, 99, 235, 0.7)'
+              ;(e.currentTarget as HTMLElement).style.background =
+                'rgba(36, 99, 235, 0.1)'
+              ;(e.currentTarget as HTMLElement).style.transform = 'translateY(-2px)'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget as HTMLElement).style.borderColor =
+                'rgba(36, 99, 235, 0.3)'
+              ;(e.currentTarget as HTMLElement).style.background =
+                'rgba(13, 18, 36, 0.7)'
+              ;(e.currentTarget as HTMLElement).style.transform = 'translateY(0)'
+            }}
+          >
+            <MessageCircle size={16} />
+            Contact Me
+          </a>
+        </motion.div>
 
-            <HStack gap={8} justify="center">
-              <Link href="https://github.com/Lovedeep-s" target="_blank">
-                <Box 
-                  color="gray.300" 
-                  _hover={{ color: 'cyan.400', transform: 'translateY(-2px)' }} 
-                  transition="all 0.2s"
-                >
-                  <Github size={28} />
-                </Box>
-              </Link>
-              <Link href="https://linkedin.com/in/lovedeepsingh102" target="_blank">
-                <Box 
-                  color="gray.300" 
-                  _hover={{ color: 'cyan.400', transform: 'translateY(-2px)' }} 
-                  transition="all 0.2s"
-                >
-                  <Linkedin size={28} />
-                </Box>
-              </Link>
-              <Link href="mailto:s.lovedeepparmarpta@gmail.com">
-                <Box 
-                  color="gray.300" 
-                  _hover={{ color: 'cyan.400', transform: 'translateY(-2px)' }} 
-                  transition="all 0.2s"
-                >
-                  <Mail size={28} />
-                </Box>
-              </Link>
-            </HStack>
-          </MotionBox>
-        </Stack>
-      </Box>
-    </Box>
+        {/* Scroll indicator */}
+        <motion.div variants={item} transition={itemTransition} style={{ marginTop: '16px' }}>
+          <motion.div
+            animate={{ y: [0, 8, 0] }}
+            transition={{ duration: 1.8, repeat: Infinity, ease: 'easeInOut' }}
+            style={{
+              width: '22px',
+              height: '36px',
+              borderRadius: '11px',
+              border: '2px solid rgba(36, 99, 235, 0.35)',
+              display: 'flex',
+              justifyContent: 'center',
+              paddingTop: '6px',
+              margin: '0 auto',
+            }}
+          >
+            <div
+              style={{
+                width: '4px',
+                height: '8px',
+                borderRadius: '2px',
+                background: 'var(--accent)',
+                opacity: 0.7,
+              }}
+            />
+          </motion.div>
+        </motion.div>
+      </motion.div>
+
+      <style>{`
+        @keyframes pulse-dot {
+          0%, 100% { box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.4); }
+          50% { box-shadow: 0 0 0 6px rgba(34, 197, 94, 0); }
+        }
+      `}</style>
+    </section>
   )
 }
-

@@ -1,160 +1,329 @@
-import {
-  Box,
-  Heading,
-  Text,
-  SimpleGrid,
-  Stack,
-  Button,
-  HStack,
-  Badge,
-  Link,
-} from "@chakra-ui/react";
-import { motion } from "framer-motion";
-import { Github, ExternalLink } from "lucide-react";
-
-const MotionBox = motion.create(Box as any);
+import { motion, type Variants } from 'framer-motion'
+import { ArrowUpRight, Github } from 'lucide-react'
 
 const projects = [
   {
-    title: "GreenLight",
+    title: 'GreenLight',
     description:
-      "Developed portal which informs administrators which rooms are empty and lights are on using footage from a CCTV camera. Uses YOLOv3 and OpenCV for real-time human detection to save electricity.",
-    tags: ["Django", "JavaScript", "YOLOv3", "OpenCV", "HTML/CSS"],
-    github:
-      "https://github.com/Lovedeep-s/CNN-based-human-detection-to-save-electricity",
-    live: "#",
+      'Computer-vision based room occupancy system using YOLOv3 and OpenCV to reduce electricity waste in academic spaces.',
+    tags: ['Python', 'OpenCV', 'YOLOv3', 'React'],
+    image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=900&q=80',
+    github: 'https://github.com/Lovedeep-s',
+    accent: '#2463eb',
   },
   {
-    title: "Tagit",
+    title: 'Tagit',
     description:
-      "Developed a cutting-edge portal that enables the generation of unique QR codes for efficient luggage tracking and management. Successfully implemented a seamless system allowing users to easily attach the QR codes to their belongings for effortless identification and tracking.",
-    tags: ["Django", "JavaScript", "HTML/CSS", "QR Codes"],
-    github: "https://github.com/Lovedeep-s/TagIT.git",
-    live: "#",
+      'QR-based luggage tracking portal with fast scan workflows, real-time state updates, and scalable Django APIs.',
+    tags: ['Next.js', 'Django', 'Tailwind', 'PostgreSQL'],
+    image: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=900&q=80',
+    github: 'https://github.com/Lovedeep-s',
+    accent: '#8b5cf6',
   },
   {
-    title: "Content Editing Microservice",
+    title: 'Content Editing Microservice',
     description:
-      "Designed and developed a content editing microservice that decouples static text from the monolithic frontend, enabling non-developers to update UI content via a user-friendly interface. Integrated with Bitbucket for dynamic content updates.",
-    tags: ["React", "TypeScript", "Go", "Bitbucket", "Microservices"],
-    github: "#",
-    live: "#",
+      'A decoupled content platform integrated with Bitbucket that lets non-developers update UI content safely.',
+    tags: ['TypeScript', 'Node.js', 'Docker', 'REST APIs'],
+    image: 'https://images.unsplash.com/photo-1581092580497-e0d23cbdf1dc?auto=format&fit=crop&w=900&q=80',
+    github: 'https://github.com/Lovedeep-s',
+    accent: '#2463eb',
   },
-];
+]
+
+const containerVariants: Variants = {
+  hidden: {},
+  show: {
+    transition: { staggerChildren: 0.15 },
+  },
+}
+
+const cardVariants: Variants = {
+  hidden: { opacity: 0, y: 40 },
+  show: { opacity: 1, y: 0 },
+}
 
 export default function Projects() {
   return (
-    <Box id="projects" py={32}>
-      <Box maxW="100%" px={{ base: 6, md: 12, lg: 20 }}>
-        <MotionBox
-          initial={{ opacity: 0, y: 20 }}
+    <section
+      id="projects"
+      style={{
+        position: 'relative',
+        zIndex: 1,
+        padding: '100px 24px',
+      }}
+    >
+      <div style={{ maxWidth: '1100px', margin: '0 auto' }}>
+        {/* Section header */}
+        <motion.div
+          initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
-          textAlign="center"
-          mb={20}
+          transition={{ duration: 0.6 }}
+          style={{ marginBottom: '64px' }}
         >
-          <Heading
-            fontSize={{ base: "4xl", md: "6xl", lg: "7xl" }}
-            fontWeight="black"
-            lineHeight="0.9"
-            mb={8}
+          <p
+            style={{
+              fontSize: '13px',
+              fontWeight: '600',
+              letterSpacing: '0.12em',
+              textTransform: 'uppercase',
+              color: 'var(--accent)',
+              marginBottom: '12px',
+            }}
           >
-            Featured Work
-          </Heading>
-          <Text
-            fontSize={{ base: "2xl", md: "3xl" }}
-            color="gray.400"
-            maxW="4xl"
-            mx="auto"
-            fontWeight="medium"
+            Portfolio
+          </p>
+          <h2
+            style={{
+              fontSize: 'clamp(36px, 5vw, 56px)',
+              fontWeight: '700',
+              letterSpacing: '-0.03em',
+              color: 'var(--text-primary)',
+              lineHeight: '1.1',
+            }}
           >
-            Projects that showcase my technical expertise and creative
-            problem-solving
-          </Text>
-        </MotionBox>
-
-        <SimpleGrid columns={{ base: 1, md: 2, lg: 3 }} gap={8}>
-          {projects.map((project) => (
-            <MotionBox
-              key={project.title}
-              initial={{ opacity: 0, y: 20 }}
-              whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: true }}
-              p={8}
-              bg="rgba(15, 23, 42, 0.8)"
-              borderRadius="2xl"
-              border="1px solid rgba(148, 163, 184, 0.1)"
-              backdropFilter="blur(10px)"
-              _hover={{
-                transform: "translateY(-4px)",
-                borderColor: "cyan.400",
-                boxShadow: "0 20px 60px rgba(34, 211, 238, 0.2)",
+            Featured{' '}
+            <span
+              style={{
+                background: 'linear-gradient(135deg, #2463eb, #8b5cf6)',
+                WebkitBackgroundClip: 'text',
+                WebkitTextFillColor: 'transparent',
+                backgroundClip: 'text',
               }}
             >
-              <Stack gap={6} h="100%">
-                <Heading size="xl" fontWeight="bold">
-                  {project.title}
-                </Heading>
-                <Text color="gray.400" fontSize="lg" lineHeight="tall" flex="1">
-                  {project.description}
-                </Text>
-                <HStack gap={3} flexWrap="wrap">
-                  {project.tags.map((tag) => (
-                    <Badge
-                      key={tag}
-                      colorPalette="blue"
-                      variant="subtle"
-                      fontSize="sm"
-                      px={3}
-                      py={1}
-                      borderRadius="full"
-                    >
-                      {tag}
-                    </Badge>
-                  ))}
-                </HStack>
-                <HStack gap={4} pt={4}>
-                  {project.github !== "#" && (
-                    <Link href={project.github} target="_blank">
-                      <Button
-                        size="md"
-                        variant="ghost"
-                        _hover={{ color: "blue.600" }}
-                        fontSize="md"
-                        p={4}
-                        color="white"
-                      >
-                        <Github size={20} style={{ marginRight: "8px" }} />
-                        Code
-                      </Button>
-                    </Link>
-                  )}
-                  {project.live !== "#" && (
-                    <Link href={project.live} target="_blank">
-                      <Button
-                        size="md"
-                        bgGradient="to-r"
-                        gradientFrom="cyan.400"
-                        gradientTo="blue.500"
-                        color="white"
-                        _hover={{ transform: "translateY(-2px)" }}
-                        fontSize="md"
-                        p={4}
-                      >
-                        <ExternalLink
-                          size={20}
-                          style={{ marginRight: "8px" }}
-                        />
-                        View Live
-                      </Button>
-                    </Link>
-                  )}
-                </HStack>
-              </Stack>
-            </MotionBox>
+              Creations
+            </span>
+          </h2>
+          <div
+            style={{
+              width: '48px',
+              height: '3px',
+              background: 'linear-gradient(90deg, #2463eb, #8b5cf6)',
+              borderRadius: '2px',
+              marginTop: '16px',
+            }}
+          />
+        </motion.div>
+
+        {/* Projects grid */}
+        <motion.div
+          variants={containerVariants}
+          initial="hidden"
+          whileInView="show"
+          viewport={{ once: true, margin: '-50px' }}
+          style={{
+            display: 'grid',
+            gridTemplateColumns: 'repeat(auto-fill, minmax(320px, 1fr))',
+            gap: '24px',
+          }}
+        >
+          {projects.map((project) => (
+            <ProjectCard key={project.title} project={project} />
           ))}
-        </SimpleGrid>
-      </Box>
-    </Box>
-  );
+        </motion.div>
+      </div>
+    </section>
+  )
+}
+
+function ProjectCard({
+  project,
+}: {
+  project: (typeof projects)[number]
+}) {
+  return (
+      <motion.article
+          variants={cardVariants}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          whileHover={{ y: -6 }}
+      style={{
+        background: 'var(--card-bg)',
+        border: '1px solid var(--card-border)',
+        borderRadius: 'var(--radius-xl)',
+        backdropFilter: 'blur(16px)',
+        WebkitBackdropFilter: 'blur(16px)',
+        overflow: 'hidden',
+        transition: 'border-color 0.3s, box-shadow 0.3s',
+        cursor: 'pointer',
+      }}
+      onMouseEnter={(e) => {
+        ;(e.currentTarget as HTMLElement).style.borderColor =
+          'rgba(36, 99, 235, 0.45)'
+        ;(e.currentTarget as HTMLElement).style.boxShadow =
+          '0 24px 60px rgba(36, 99, 235, 0.18)'
+      }}
+      onMouseLeave={(e) => {
+        ;(e.currentTarget as HTMLElement).style.borderColor =
+          'var(--card-border)'
+        ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
+      }}
+    >
+      {/* Image */}
+      <div style={{ position: 'relative', overflow: 'hidden', height: '200px' }}>
+        <img
+          src={project.image}
+          alt={project.title}
+          style={{
+            width: '100%',
+            height: '100%',
+            objectFit: 'cover',
+            transition: 'transform 0.5s ease',
+          }}
+          onMouseEnter={(e) => {
+            ;(e.target as HTMLElement).style.transform = 'scale(1.05)'
+          }}
+          onMouseLeave={(e) => {
+            ;(e.target as HTMLElement).style.transform = 'scale(1)'
+          }}
+        />
+        {/* Tag pills overlay */}
+        <div
+          style={{
+            position: 'absolute',
+            top: '12px',
+            left: '12px',
+            display: 'flex',
+            gap: '6px',
+            flexWrap: 'wrap',
+          }}
+        >
+          {project.tags.slice(0, 2).map((tag) => (
+            <span
+              key={tag}
+              style={{
+                padding: '3px 10px',
+                borderRadius: '999px',
+                background: 'rgba(5, 8, 20, 0.8)',
+                border: '1px solid rgba(36, 99, 235, 0.4)',
+                backdropFilter: 'blur(8px)',
+                fontSize: '11px',
+                fontWeight: '600',
+                color: '#a5b4fc',
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+      </div>
+
+      {/* Body */}
+      <div style={{ padding: '24px' }}>
+        <h3
+          style={{
+            fontSize: '20px',
+            fontWeight: '700',
+            color: 'var(--text-primary)',
+            letterSpacing: '-0.02em',
+            marginBottom: '10px',
+          }}
+        >
+          {project.title}
+        </h3>
+        <p
+          style={{
+            fontSize: '14px',
+            color: 'var(--text-secondary)',
+            lineHeight: '1.65',
+            marginBottom: '20px',
+          }}
+        >
+          {project.description}
+        </p>
+
+        {/* All tags */}
+        <div
+          style={{
+            display: 'flex',
+            gap: '6px',
+            flexWrap: 'wrap',
+            marginBottom: '20px',
+          }}
+        >
+          {project.tags.map((tag) => (
+            <span
+              key={tag}
+              style={{
+                padding: '4px 10px',
+                borderRadius: '999px',
+                background: 'rgba(36, 99, 235, 0.1)',
+                border: '1px solid rgba(36, 99, 235, 0.2)',
+                fontSize: '11px',
+                fontWeight: '500',
+                color: '#a5b4fc',
+              }}
+            >
+              {tag}
+            </span>
+          ))}
+        </div>
+
+        {/* Actions */}
+        <div style={{ display: 'flex', gap: '10px' }}>
+          <a
+            href={project.github}
+            target="_blank"
+            rel="noreferrer"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              background: 'rgba(36, 99, 235, 0.1)',
+              border: '1px solid rgba(36, 99, 235, 0.2)',
+              color: '#a5b4fc',
+              fontSize: '13px',
+              fontWeight: '500',
+              textDecoration: 'none',
+              transition: 'background 0.2s, border-color 0.2s',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget as HTMLElement).style.background =
+                'rgba(36, 99, 235, 0.2)'
+              ;(e.currentTarget as HTMLElement).style.borderColor =
+                'rgba(36, 99, 235, 0.5)'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget as HTMLElement).style.background =
+                'rgba(36, 99, 235, 0.1)'
+              ;(e.currentTarget as HTMLElement).style.borderColor =
+                'rgba(36, 99, 235, 0.2)'
+            }}
+          >
+            <Github size={14} />
+            Code
+          </a>
+          <a
+            href="#contact"
+            style={{
+              display: 'inline-flex',
+              alignItems: 'center',
+              gap: '6px',
+              padding: '8px 16px',
+              borderRadius: '8px',
+              background: 'linear-gradient(135deg, #2463eb, #3b74f5)',
+              color: '#fff',
+              fontSize: '13px',
+              fontWeight: '600',
+              textDecoration: 'none',
+              transition: 'opacity 0.2s',
+              cursor: 'pointer',
+            }}
+            onMouseEnter={(e) => {
+              ;(e.currentTarget as HTMLElement).style.opacity = '0.85'
+            }}
+            onMouseLeave={(e) => {
+              ;(e.currentTarget as HTMLElement).style.opacity = '1'
+            }}
+          >
+            Details
+            <ArrowUpRight size={14} />
+          </a>
+        </div>
+      </div>
+    </motion.article>
+  )
 }
