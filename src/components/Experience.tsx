@@ -1,98 +1,113 @@
-import { motion } from 'framer-motion'
-import { Briefcase, GraduationCap } from 'lucide-react'
+import { motion } from "framer-motion";
+import { Briefcase, GraduationCap } from "lucide-react";
 
 const timeline = [
   {
-    period: '2025 – Present',
-    title: 'Associate Software Engineer',
-    org: 'Vimo India',
+    period: "January 2025 - Present",
+    title: "Software Engineer",
+    org: "Vimo India",
     description:
-      'Leading WCAG 2.2 improvements, migrating key modules to TypeScript, and improving page performance by 30%.',
+      " Promoted to Software Engineer for strong ownership and delivery across Front End modernization, accessibility, and platform improvement initiatives",
     bullets: [
-      'Led accessibility audit and WCAG 2.2 remediation across core product flows.',
-      'Drove TypeScript migration for critical frontend modules, reducing runtime bugs by 40%.',
-      'Optimised React rendering pipeline, improving LCP and INP scores significantly.',
+      "Led UI permission refactor across multiple modules, improving functionality, maintainability, and modular design across enterprise applications.",
+      "Drove JSP to React migration by developing reusable components and scalable front-end architecture.",
+      "Implemented responsive interfaces and improved cross-browser compatibility across modern web browsers.",
+      "Collaborated with back-end engineers and QA teams to deliver reliable end-to-end functionality with minimal production issues.",
     ],
-    accent: '#2463eb',
-    icon: 'work',
+    accent: "#8b5cf6",
+    icon: "work",
   },
   {
-    period: '2025',
-    title: 'Software Engineer Intern',
-    org: 'Vimo India',
+    period: "July 2025 - December 2025",
+    title: "Associate Software Engineer",
+    org: "Vimo India",
     description:
-      'Built backend services and CI/CD-integrated content delivery tooling with strong collaboration across design and platform teams.',
+      "Leading WCAG 2.2 improvements, migrating key modules to TypeScript, and improving page performance by 30%.",
     bullets: [
-      'Designed and shipped a CMS integration that decoupled UI content from the codebase.',
-      'Automated deployment pipelines using Jenkins + Docker, cutting release time by 50%.',
-      'Collaborated with design team to deliver pixel-perfect, accessible UI components.',
+      "Led accessibility audit and WCAG 2.2 remediation across core product flows.",
+      "Drove TypeScript migration for critical frontend modules, reducing runtime bugs by 40%.",
+      "Optimised React rendering pipeline, improving LCP and INP scores significantly.",
     ],
-    accent: '#8b5cf6',
-    icon: 'work',
+    accent: "#2463eb",
+    icon: "work",
   },
   {
-    period: '2024',
-    title: 'SDE Intern',
-    org: 'Arvat AI',
+    period: "January 2025 - June 2025",
+    title: "Software Engineer Intern",
+    org: "Vimo India",
     description:
-      'Developed dashboard systems, persistent layouts, and background queue workflows with Go and React.',
+      "Built backend services and CI/CD-integrated content delivery tooling with strong collaboration across design and platform teams.",
     bullets: [
-      'Built real-time analytics dashboards in React with WebSocket data streams.',
-      'Engineered background job queues in Go, processing 10k+ tasks daily reliably.',
-      'Implemented persistent layout system that reduced user context-switching friction.',
+      "Designed and shipped a CMS integration that decoupled UI content from the codebase.",
+      "Automated deployment pipelines using Jenkins + Docker, cutting release time by 50%.",
+      "Collaborated with design team to deliver pixel-perfect, accessible UI components.",
     ],
-    accent: '#2463eb',
-    icon: 'work',
+    accent: "#8b5cf6",
+    icon: "work",
   },
-]
+  {
+    period: "June 2024 - December 2024",
+    title: "SDE Intern",
+    org: "Arvat AI",
+    description:
+      "Developed dashboard systems, persistent layouts, and background queue workflows with Go and React.",
+    bullets: [
+      "Built real-time analytics dashboards in React with WebSocket data streams.",
+      "Engineered background job queues in Go, processing 10k+ tasks daily reliably.",
+      "Implemented persistent layout system that reduced user context-switching friction.",
+    ],
+    accent: "#2463eb",
+    icon: "work",
+  },
+];
 
 export default function Experience() {
   return (
     <section
       id="experience"
       style={{
-        position: 'relative',
+        position: "relative",
         zIndex: 1,
-        padding: '100px 24px',
+        padding: "100px 24px",
       }}
     >
-      <div style={{ maxWidth: '900px', margin: '0 auto' }}>
+      <div style={{ maxWidth: "900px", margin: "0 auto" }}>
         {/* Section header */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.6 }}
-          style={{ marginBottom: '64px' }}
+          style={{ marginBottom: "64px" }}
         >
           <p
             style={{
-              fontSize: '13px',
-              fontWeight: '600',
-              letterSpacing: '0.12em',
-              textTransform: 'uppercase',
-              color: 'var(--accent)',
-              marginBottom: '12px',
+              fontSize: "13px",
+              fontWeight: "600",
+              letterSpacing: "0.12em",
+              textTransform: "uppercase",
+              color: "var(--accent)",
+              marginBottom: "12px",
             }}
           >
             Career
           </p>
           <h2
             style={{
-              fontSize: 'clamp(36px, 5vw, 56px)',
-              fontWeight: '700',
-              letterSpacing: '-0.03em',
-              color: 'var(--text-primary)',
-              lineHeight: '1.1',
+              fontSize: "clamp(36px, 5vw, 56px)",
+              fontWeight: "700",
+              letterSpacing: "-0.03em",
+              color: "var(--text-primary)",
+              lineHeight: "1.1",
             }}
           >
-            Journey Through{' '}
+            Journey Through{" "}
             <span
               style={{
-                background: 'linear-gradient(135deg, #2463eb, #8b5cf6)',
-                WebkitBackgroundClip: 'text',
-                WebkitTextFillColor: 'transparent',
-                backgroundClip: 'text',
+                background: "linear-gradient(135deg, #2463eb, #8b5cf6)",
+                WebkitBackgroundClip: "text",
+                WebkitTextFillColor: "transparent",
+                backgroundClip: "text",
               }}
             >
               Time
@@ -100,37 +115,37 @@ export default function Experience() {
           </h2>
           <div
             style={{
-              width: '48px',
-              height: '3px',
-              background: 'linear-gradient(90deg, #2463eb, #8b5cf6)',
-              borderRadius: '2px',
-              marginTop: '16px',
+              width: "48px",
+              height: "3px",
+              background: "linear-gradient(90deg, #2463eb, #8b5cf6)",
+              borderRadius: "2px",
+              marginTop: "16px",
             }}
           />
         </motion.div>
 
         {/* Timeline */}
-        <div style={{ position: 'relative' }}>
+        <div style={{ position: "relative" }}>
           {/* Vertical line */}
           <div
             style={{
-              position: 'absolute',
-              left: '20px',
-              top: '8px',
-              bottom: '8px',
-              width: '1px',
+              position: "absolute",
+              left: "20px",
+              top: "8px",
+              bottom: "8px",
+              width: "1px",
               background:
-                'linear-gradient(180deg, #2463eb 0%, #8b5cf6 50%, #2463eb 100%)',
+                "linear-gradient(180deg, #2463eb 0%, #8b5cf6 50%, #2463eb 100%)",
               opacity: 0.3,
             }}
           />
 
           <div
             style={{
-              display: 'flex',
-              flexDirection: 'column',
-              gap: '32px',
-              paddingLeft: '60px',
+              display: "flex",
+              flexDirection: "column",
+              gap: "32px",
+              paddingLeft: "60px",
             }}
           >
             {timeline.map((item, i) => (
@@ -140,17 +155,17 @@ export default function Experience() {
         </div>
       </div>
     </section>
-  )
+  );
 }
 
 function TimelineCard({
   item,
   index,
 }: {
-  item: (typeof timeline)[number]
-  index: number
+  item: (typeof timeline)[number];
+  index: number;
 }) {
-  const isEven = index % 2 === 0
+  const isEven = index % 2 === 0;
 
   return (
     <motion.div
@@ -158,75 +173,78 @@ function TimelineCard({
       whileInView={{ opacity: 1, x: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.6, delay: index * 0.1 }}
-      style={{ position: 'relative' }}
+      style={{ position: "relative" }}
     >
       {/* Timeline dot */}
       <div
         style={{
-          position: 'absolute',
-          left: '-48px',
-          top: '20px',
-          width: '16px',
-          height: '16px',
-          borderRadius: '50%',
+          position: "absolute",
+          left: "-48px",
+          top: "20px",
+          width: "16px",
+          height: "16px",
+          borderRadius: "50%",
           background: item.accent,
           boxShadow: `0 0 16px ${item.accent}66`,
-          border: '3px solid var(--bg-base)',
+          border: "3px solid var(--bg-base)",
           zIndex: 2,
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "center",
         }}
       />
 
       {/* Card */}
       <div
         style={{
-          background: 'var(--card-bg)',
+          background: "var(--card-bg)",
           border: `1px solid ${item.accent}22`,
           borderLeft: `3px solid ${item.accent}`,
-          borderRadius: 'var(--radius-lg)',
-          backdropFilter: 'blur(16px)',
-          WebkitBackdropFilter: 'blur(16px)',
-          padding: '28px',
-          transition: 'border-color 0.3s, box-shadow 0.3s',
+          borderRadius: "var(--radius-lg)",
+          backdropFilter: "blur(16px)",
+          WebkitBackdropFilter: "blur(16px)",
+          padding: "28px",
+          transition: "border-color 0.3s, box-shadow 0.3s",
         }}
         onMouseEnter={(e) => {
-          ;(e.currentTarget as HTMLElement).style.boxShadow = `0 16px 48px ${item.accent}22`
-          ;(e.currentTarget as HTMLElement).style.borderColor = `${item.accent}55`
+          (e.currentTarget as HTMLElement).style.boxShadow =
+            `0 16px 48px ${item.accent}22`;
+          (e.currentTarget as HTMLElement).style.borderColor =
+            `${item.accent}55`;
         }}
         onMouseLeave={(e) => {
-          ;(e.currentTarget as HTMLElement).style.boxShadow = 'none'
-          ;(e.currentTarget as HTMLElement).style.borderColor = `${item.accent}22`
+          (e.currentTarget as HTMLElement).style.boxShadow = "none";
+          (e.currentTarget as HTMLElement).style.borderColor =
+            `${item.accent}22`;
         }}
       >
         {/* Header row */}
         <div
           style={{
-            display: 'flex',
-            alignItems: 'flex-start',
-            justifyContent: 'space-between',
-            flexWrap: 'wrap',
-            gap: '12px',
-            marginBottom: '14px',
+            display: "flex",
+            alignItems: "flex-start",
+            justifyContent: "space-between",
+            flexWrap: "wrap",
+            gap: "12px",
+            marginBottom: "14px",
           }}
         >
-          <div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <div
               style={{
-                width: '36px',
-                height: '36px',
-                borderRadius: '8px',
+                width: "36px",
+                height: "36px",
+                borderRadius: "8px",
                 background: `${item.accent}18`,
                 border: `1px solid ${item.accent}33`,
-                display: 'flex',
-                alignItems: 'center',
-                justifyContent: 'center',
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
                 color: item.accent,
                 flexShrink: 0,
               }}
             >
-              {item.icon === 'work' ? (
+              {item.icon === "work" ? (
                 <Briefcase size={16} />
               ) : (
                 <GraduationCap size={16} />
@@ -235,21 +253,21 @@ function TimelineCard({
             <div>
               <h3
                 style={{
-                  fontSize: '17px',
-                  fontWeight: '700',
-                  color: 'var(--text-primary)',
-                  letterSpacing: '-0.02em',
-                  lineHeight: '1.3',
+                  fontSize: "17px",
+                  fontWeight: "700",
+                  color: "var(--text-primary)",
+                  letterSpacing: "-0.02em",
+                  lineHeight: "1.3",
                 }}
               >
                 {item.title}
               </h3>
               <p
                 style={{
-                  fontSize: '14px',
-                  fontWeight: '600',
+                  fontSize: "14px",
+                  fontWeight: "600",
                   color: item.accent,
-                  marginTop: '2px',
+                  marginTop: "2px",
                 }}
               >
                 {item.org}
@@ -259,14 +277,14 @@ function TimelineCard({
 
           <span
             style={{
-              padding: '5px 12px',
-              borderRadius: '999px',
+              padding: "5px 12px",
+              borderRadius: "999px",
               background: `${item.accent}14`,
               border: `1px solid ${item.accent}30`,
-              fontSize: '12px',
-              fontWeight: '600',
-              color: item.accent === '#2463eb' ? '#93c5fd' : '#c4b5fd',
-              whiteSpace: 'nowrap',
+              fontSize: "12px",
+              fontWeight: "600",
+              color: item.accent === "#2463eb" ? "#93c5fd" : "#c4b5fd",
+              whiteSpace: "nowrap",
             }}
           >
             {item.period}
@@ -275,38 +293,38 @@ function TimelineCard({
 
         <p
           style={{
-            fontSize: '14px',
-            color: 'var(--text-secondary)',
-            lineHeight: '1.65',
-            marginBottom: '16px',
+            fontSize: "14px",
+            color: "var(--text-secondary)",
+            lineHeight: "1.65",
+            marginBottom: "16px",
           }}
         >
           {item.description}
         </p>
 
         {/* Bullet points */}
-        <ul style={{ listStyle: 'none', padding: 0, margin: 0 }}>
+        <ul style={{ listStyle: "none", padding: 0, margin: 0 }}>
           {item.bullets.map((bullet) => (
             <li
               key={bullet}
               style={{
-                display: 'flex',
-                alignItems: 'flex-start',
-                gap: '8px',
-                marginBottom: '8px',
-                fontSize: '13px',
-                color: 'var(--text-secondary)',
-                lineHeight: '1.6',
+                display: "flex",
+                alignItems: "flex-start",
+                gap: "8px",
+                marginBottom: "8px",
+                fontSize: "13px",
+                color: "var(--text-secondary)",
+                lineHeight: "1.6",
               }}
             >
               <span
                 style={{
-                  width: '5px',
-                  height: '5px',
-                  borderRadius: '50%',
+                  width: "5px",
+                  height: "5px",
+                  borderRadius: "50%",
                   background: item.accent,
                   flexShrink: 0,
-                  marginTop: '8px',
+                  marginTop: "8px",
                 }}
               />
               {bullet}
@@ -315,5 +333,5 @@ function TimelineCard({
         </ul>
       </div>
     </motion.div>
-  )
+  );
 }

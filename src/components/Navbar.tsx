@@ -149,7 +149,7 @@ export default function Navbar() {
           >
             <a
               href="/Lovedeep_s_Resume.pdf"
-              download
+              download="Lovedeep_s_Resume.pdf"
               className="resume-btn"
               style={{
                 padding: '8px 18px',
