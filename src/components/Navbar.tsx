@@ -148,7 +148,7 @@ export default function Navbar() {
             }}
           >
             <a
-              href="/Lovedeep_s_Resume.pdf"
+              href={`${import.meta.env.BASE_URL}Lovedeep_s_Resume.pdf`}
               download="Lovedeep_s_Resume.pdf"
               className="resume-btn"
               style={{
