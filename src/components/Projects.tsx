@@ -3,21 +3,30 @@ import { ArrowUpRight, Github } from 'lucide-react'
 
 const projects = [
   {
+    title: 'Knight Horses',
+    description:
+      'Premium horse sales platform showcasing exceptional breeds with a polished, responsive experience and streamlined browsing for buyers.',
+    tags: ['React', 'TypeScript', 'Vite', 'Responsive Design'],
+    image: 'https://knighthorses.com/Horses/The-Friesian-Horse-1.jpg',
+    live: 'https://knighthorses.com/',
+    accent: '#b45309',
+  },
+  {
     title: 'GreenLight',
     description:
       'Computer-vision based room occupancy system using YOLOv3 and OpenCV to reduce electricity waste in academic spaces.',
     tags: ['Python', 'OpenCV', 'YOLOv3', 'React'],
     image: 'https://images.unsplash.com/photo-1563089145-599997674d42?auto=format&fit=crop&w=900&q=80',
-    github: 'https://github.com/Lovedeep-s',
+    github: 'https://github.com/Lovedeep-s/CNN-based-human-detection-to-save-electricity',
     accent: '#2463eb',
   },
   {
     title: 'Tagit',
     description:
       'QR-based luggage tracking portal with fast scan workflows, real-time state updates, and scalable Django APIs.',
-    tags: ['Next.js', 'Django', 'Tailwind', 'PostgreSQL'],
+    tags: ['Django', 'JavaScript', 'HTML/CSS', 'QR Workflows'],
     image: 'https://images.unsplash.com/photo-1518773553398-650c184e0bb3?auto=format&fit=crop&w=900&q=80',
-    github: 'https://github.com/Lovedeep-s',
+    github: 'https://github.com/Lovedeep-s/TagIT.git',
     accent: '#8b5cf6',
   },
   {
@@ -261,43 +270,47 @@ function ProjectCard({
 
         {/* Actions */}
         <div style={{ display: 'flex', gap: '10px' }}>
+          {project.github && (
+            <a
+              href={project.github}
+              target="_blank"
+              rel="noreferrer"
+              style={{
+                display: 'inline-flex',
+                alignItems: 'center',
+                gap: '6px',
+                padding: '8px 16px',
+                borderRadius: '8px',
+                background: 'rgba(36, 99, 235, 0.1)',
+                border: '1px solid rgba(36, 99, 235, 0.2)',
+                color: '#a5b4fc',
+                fontSize: '13px',
+                fontWeight: '500',
+                textDecoration: 'none',
+                transition: 'background 0.2s, border-color 0.2s',
+                cursor: 'pointer',
+              }}
+              onMouseEnter={(e) => {
+                ;(e.currentTarget as HTMLElement).style.background =
+                  'rgba(36, 99, 235, 0.2)'
+                ;(e.currentTarget as HTMLElement).style.borderColor =
+                  'rgba(36, 99, 235, 0.5)'
+              }}
+              onMouseLeave={(e) => {
+                ;(e.currentTarget as HTMLElement).style.background =
+                  'rgba(36, 99, 235, 0.1)'
+                ;(e.currentTarget as HTMLElement).style.borderColor =
+                  'rgba(36, 99, 235, 0.2)'
+              }}
+            >
+              <Github size={14} />
+              Code
+            </a>
+          )}
           <a
-            href={project.github}
-            target="_blank"
-            rel="noreferrer"
-            style={{
-              display: 'inline-flex',
-              alignItems: 'center',
-              gap: '6px',
-              padding: '8px 16px',
-              borderRadius: '8px',
-              background: 'rgba(36, 99, 235, 0.1)',
-              border: '1px solid rgba(36, 99, 235, 0.2)',
-              color: '#a5b4fc',
-              fontSize: '13px',
-              fontWeight: '500',
-              textDecoration: 'none',
-              transition: 'background 0.2s, border-color 0.2s',
-              cursor: 'pointer',
-            }}
-            onMouseEnter={(e) => {
-              ;(e.currentTarget as HTMLElement).style.background =
-                'rgba(36, 99, 235, 0.2)'
-              ;(e.currentTarget as HTMLElement).style.borderColor =
-                'rgba(36, 99, 235, 0.5)'
-            }}
-            onMouseLeave={(e) => {
-              ;(e.currentTarget as HTMLElement).style.background =
-                'rgba(36, 99, 235, 0.1)'
-              ;(e.currentTarget as HTMLElement).style.borderColor =
-                'rgba(36, 99, 235, 0.2)'
-            }}
-          >
-            <Github size={14} />
-            Code
-          </a>
-          <a
-            href="#contact"
+            href={project.live ?? '#contact'}
+            target={project.live ? '_blank' : undefined}
+            rel={project.live ? 'noreferrer' : undefined}
             style={{
               display: 'inline-flex',
               alignItems: 'center',
@@ -319,7 +332,7 @@ function ProjectCard({
               ;(e.currentTarget as HTMLElement).style.opacity = '1'
             }}
           >
-            Details
+            {project.live ? 'Visit Site' : 'Details'}
             <ArrowUpRight size={14} />
           </a>
         </div>
