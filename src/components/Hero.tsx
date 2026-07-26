@@ -115,12 +115,12 @@ export default function Hero() {
             maxWidth: '600px',
           }}
         >
-          Crafting immersive{' '}
+          Software Engineer building scalable{' '}
           <strong style={{ color: 'var(--text-primary)', fontWeight: '600' }}>
-            3D web experiences
+            front-end and back-end applications
           </strong>{' '}
-          and high-performance applications with a focus on modern aesthetics and
-          glassmorphism.
+          with React, Go, and TypeScript — focused on accessibility, performance,
+          and modular architecture.
         </motion.p>
 
         {/* CTAs */}
